@@ -1,23 +1,36 @@
 const request = require('supertest');
 const app = require('./app');
 
-test('Get I am alive and responding', done => {
+describe('old', () => {
+
+test('Get / I am alive and responding', (done) => {
     request(app)
-    .get('/Get I am alive and responding')
+    .get('/')
     .expect(200)
-    .end(done)
+    .end(done);
 });
 
-test('GET about ', done => {
+test('GET /about ', (done) => {
     request(app)
     .get('/about')
     .expect(200)
-    .end(done)
+    .end(done);
 });
 
-test('GET jibberish', done => {
+test('GET / jibberish', (done) => {
     request(app)
-    .get('/asjdgajdsg')
+    .get('/jibberish')
     .expect(404)
-    .end(done)
+    .end(done);
 });
+});
+
+describe('new', () =>   {
+    test('GET / user ska ge en lista av antalet användare', (done) => {
+        request(app)
+        .get('/user')
+        .expect(200)
+        .end(done);
+    });
+    
+}  )
