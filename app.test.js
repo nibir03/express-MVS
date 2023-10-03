@@ -1,14 +1,14 @@
 const request = require('supertest');
 const app = require('./app');
 
-test('I am alive and responding', done => {
+test('Get I am alive and responding', done => {
     request(app)
-    .get('/')
+    .get('/Get I am alive and responding')
     .expect(200)
     .end(done)
 });
 
-test('GET /', done => {
+test('GET about ', done => {
     request(app)
     .get('/about')
     .expect(200)
